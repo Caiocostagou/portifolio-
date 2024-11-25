@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio de Caio Costa</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background: #fff;
+      color: #333;
+    }
+
+    header {
+      background: #b22222;
+      color: #fff;
+      padding: 1rem 0;
+      text-align: center;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding: 0;
+    }
+
+    nav ul li {
+      margin: 0 10px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    main {
+      padding: 2rem;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .about {
+      background: #f5f5f5;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      margin-bottom: 2rem;
+    }
+
+    .projects {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .projects article {
+      background: #fff;
+      padding: 1rem;
+      border: 1px solid #b22222;
+      flex: 1 1 calc(50% - 1rem);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem 0;
+      background: #b22222;
+      color: #fff;
+    }
+
+    .social-links a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 0 10px;
+    }
+
+    /* Estilos para o tema escuro */
+    body.dark-mode {
+      background: #000000;
+      color: #000000;
+    }
+
+    body.dark-mode header, body.dark-mode footer {
+      background: #000000;
+    }
+
+    body.dark-mode .projects article {
+      background: #000000;
+      color: #fdfdfd;
+      border-color: #ffffff;
+    }
+
+    /* Botão de alternância de tema */
+    #themeToggle {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      padding: 10px 15px;
+      background: #b22222;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    #themeToggle:hover {
+      background: #8b0000;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a onclick="showSection('about')">Sobre Mim</a></li>
+        <li><a onclick="showSection('projects')">Projetos</a></li>
+        <li><a onclick="showSection('links')">Links</a></li>
+      </ul>
+    </nav>
+    <h1>Portfólio de Caio Costa</h1>
+  </header>
+
+  <main>
+    <!-- Seção Sobre Mim -->
+    <section id="about" class="about">
+      <h2>Sobre Mim</h2>
+      <p>
+        Olá! Meu nome é Caio Costa e estou no primeiro período de Ciência da Computação no Cesar School. Desde jovem, sonhava em me tornar um desenvolvedor, e hoje estou dando grandes passos para transformar esse sonho em realidade. Meu objetivo é crescer no mundo da tecnologia e contribuir com soluções inovadoras.
+      </p>
+      <p>
+        Sou apaixonado por aprender novas tecnologias, resolver problemas complexos e construir soluções que façam a diferença. 
+      </p>
+      <p>
+        <strong></strong>, <strong></strong>  <strong></strong>.
+      </p>
+    </section>
+
+    <!-- Seção Projetos -->
+    <section id="projects" class="hidden">
+      <h2>Meus Projetos</h2>
+      <div class="projects">
+        <article>
+          <h3>https://github.com/jayp06/project-in-python/blob/main/projeto.py</h3>
+          <p>Esse é um projeto que eu e meu grupo da faculdade, fizemos em que o objetivo era fazer um gerenciamento de treinos de corridas, que permite que o usuario registre seus treinos e competições, monitorando sua evolução e o ajudando a planejar novos treinos.</p>
+        </article>
+        <article>
+          <h3>Projeto 2</h3>
+          <p>Descrição breve do projeto.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Seção Links -->
+    <section id="links" class="hidden">
+      <h2>Meus Links</h2>
+      <p>
+        <a href="https://github.com/Caiocostagou" target="_blank">GitHub</a><br>
+        <a href="https://www.linkedin.com/in/caio-gouveia-04476433a/" target="_blank">LinkedIn</a>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2024 Caio Costa Gouveia</p>
+  </footer>
+
+  <!-- Botão de alternância de tema -->
+  <button id="themeToggle">Alternar Tema</button>
+
+  <script>
+    function showSection(sectionId) {
+      // Esconde todas as seções
+      document.querySelectorAll('main section').forEach(section => {
+        section.classList.add('hidden');
+      });
+
+      // Mostra a seção selecionada
+      document.getElementById(sectionId).classList.remove('hidden');
+    }
+
+    // Alternância entre tema claro e escuro
+    const themeToggle = document.getElementById('themeToggle');
+    themeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      themeToggle.textContent = document.body.classList.contains('dark-mode')
+        ? 'Modo Claro'
+        : 'Modo Escuro';
+    });
+  </script>
+</body>
+</html>
